@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="Index.css">
+    
 </head>
 <body>
+
     
 
     <h1>Using HTML Formatting Elements</h1>
@@ -23,7 +25,7 @@
     <h2>Updating, Emphasizing, and Shifting text</h2>
 
     <div>
-        <P>This is an example of <del>deleted</del> <ins>inserted</ins> text.</P>
+        <P> This is an example of <del>deleted</del> <ins>inserted</ins> text.</P>
         <p>The is an example of <strong>Strong</strong> text.</p>
         <p>The is an example of <sub>subscript</sub>text.</p>
         <p>The is an example of <sup>superscript</sup> text.</p>
@@ -50,6 +52,48 @@
         <p>var name = 'Javascrip';</p>
         <p>var n = 9;</p>
     </div>
+
+    <form>
+        <fieldset>
+        <legend>Personal:</legend>
+        <label for="fname">First Name </label><br>
+        <input type="text"><br>
+        <label for="lname">Last Name</label><br>
+        <input type="text"><br><br>
+        <button type="button" onclick="alert('Ban da dang ky thanh cong')">Submit</button>
+        </fieldset>
+
+    </form>
+    <form action="">
+        <label for="cars">Choose a car: </label>
+        <select name="cars" id="cars" size="2">
+            <option value="volvo">volvo</option>
+            <option value="saab">saab</option>
+            <option value="bmw" selected>bmw</option>
+            <option value="audi">audi</option>
+        </select>
+        <input type="Submit">
+        <button type="button" onclick="alert('Tracy')">Click me!</button>
+    </form>
+    <form action="">
+        <input list="browser" name="browser">
+        <datalist id="browser">
+            <option value="firefox">firefox</option>
+            <option value="chorme">chorme</option>
+            <option value="safari">safari</option>
+            <option value="opera">opera</option>
+        </datalist>
+        <input type="submit">
+    </form>
+    <form action="">
+        <label for="username">Username</label><br>
+        <input type="text" name="username" id="username"><br>
+        <label for="pwd">Password</label><br>
+        <input type="password" name="pwd" id="pwd"><br>
+        <input type="submit">
+    </form>
+
+    
 
 
     

@@ -1,0 +1,33 @@
+.center{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+}
+.pd{
+    padding-left: 15px;
+    text-align: justify;
+}
+.main_image{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 98%;
+
+}
+.main_h1{
+    padding-left: 1%;
+}
+.main_icon{
+    text-align: center;
+}
+.main_h11{
+    border-bottom: 2px solid yellow;
+    padding-bottom: 0.5em;
+}
+.main_img3{
+    text-align: center;
+}
+.ul3{
+ padding-left: 21px;
+}
