@@ -1,0 +1,41 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+  }
+  
+  li {
+    float: left;
+    
+  }
+  
+  li a {
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    
+  }
+.Ip1{
+    color:white;
+    background-color: red;
+    border-color: white;
+    width: 10%;
+    height: 40px;
+    position: relative;
+    left: 45%;
+        
+}
+.container{
+    position: relative;
+  text-align: center;
+  color: white;
+}
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}
