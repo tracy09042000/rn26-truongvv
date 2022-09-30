@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./fontawesome-free-6.2.0-web/css/all.min.css">
+    
+    <style>
+       .course-item {
+        background-color: rgba(153, 151, 151, 0.2);
+        height: 750px;
+        width: 325px;
+        box-shadow: 5px 5px 1px 2px gray;
+        
+    }
+    
+    
+    i{
+        color: rgb(66, 64, 64);
+    }
+    
+    h1 {
+        color: gray;
+        padding-top: 5px;
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .grid {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .grid.wide {
+        margin: 10px;
+    }
+    
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -4px;
+        margin-right: -4px;
+    }
+    
+    .col {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    
+    .place-img {
+        padding-top: 15px;
+        margin-left: 15px;
+        width: 295px;
+        height: 230px;
+    }
+   
+    
+    .contact {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding-top: 16px;
+    }
+    
+    .contact .email {
+        padding: 1px 0px 1px 20px;
+        color: #fff;
+        box-shadow: 5px 5px 1px 2px rgb(231, 230, 230);
+    }
+    
+    .contact .phone {
+        padding: 1px 10px 1px 20px;
+        margin-top: 16px;
+        color: #fff;
+        box-shadow: 5px 5px 1px 2px rgb(231, 230, 230);
+    }
+    
+    .contact span {
+        padding-left: 5px;
+    }
+    
+    .card-body {
+        margin-left: 15px;
+    }
+    
+    .bg-red {
+        background-color: rgb(247, 83, 82);
+    }
+    
+    .bg-green {
+        background-color: rgb(81, 213, 103);
+    }
+    
+    .bg-bluelight {
+        background-color: rgb(49, 200, 221);
+    }
+    
+    .bg-blue {
+        background-color: rgb(97, 156, 236);
+    }
+    
+    .bg-orange {
+        background-color: rgb(247, 129, 83);
+    }
+    
+    .bg-yellow {
+        background-color: rgb(252, 213, 24);
+    }
+    
+    .bg-pinklight {
+        background-color: rgb(203, 121, 231);
+    }
+    
+    .bg-pink {
+        background-color: rgb(254, 96, 232)
+    }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <div class="grid wide">
+        <div class="row">
+            <!-- user1 -->
+            <div class="col l-3">
+                <div class="course-item">
+
+                    <img src="data:image/jpeg;base64,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" alt="" class="place-img">
+                    <h1>ROBORT PATTISON</h1>
+                    <P style="text-align:center ;">Developing</P>
+                    <div class="card">
+                        <!-- row 1 -->
+                        <div class="card-body">
+                            <div>
+                                <i class="fa-solid fa-calendar-days" style="padding-top:5px ;"></i>
+                                <span style="margin-left: 10px;">DBO</span>
+                                <span style="padding-left: 150px;" class="mb-0">23/05/2014</span>
+                            </div>
+                            <div style="padding-top: 20px;">
+                                <i class="fa-solid fa-heart"></i>
+                                <span style="margin-left: 10px;">BG</span>
+                                <span style="padding-left: 210px;" class="mb-0">B+</span>
+                            </div>
+                            <div style="padding-top: 20px;">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span style="margin-left: 5px;">EDU</span>
+                                <span style="padding-left: 185px;" class="mb-0">MCA</span>
+                            </div>
+                            </li>
+                            <div style="padding-top: 20px;">
+                                <i class="fa-sharp fa-solid fa-location-dot"></i>
+                                <span style="margin-left: 10px;">RES</span>
+                                <span style="padding-left: 170px;" class="mb-0">Bangalore</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact ">
+                        <div class="email bg-red ">
+                            <h4>EMAIL ID</h4>
+                            <p>
+                                <i class="fa-regular fa-envelope "></i>
+                                <span>truongvvde140264@gmail.com</span>
+                            </p>
+                        </div>
+                        <div class="phone bg-green ">
+                            <h4>PHONE NO</h4>
+                            <p>
+                                <i class="fa-solid fa-phone "></i>
+                                <span>0868906633</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col l-3">
+                <div class="course-item">
+
+                    <img src="data:image/jpeg;base64,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" alt="" class="place-img">
+                    <h1>JAMES SMITH</h1>
+                    <P style="text-align:center ;">Designer</P>
+                    <div class="card">
+                        <!-- row 1 -->
+                        <div class="card-body">
+                            <div>
+                                <i class="fa-solid fa-calendar-days" style="padding-top:5px ;"></i>
+                                <span style="margin-left: 10px;">DBO</span>
+                                <span style="padding-left: 150px;" class="mb-0">23/05/2014</span>
+                            </div>
+                            <div style="padding-top: 20px;">
+                                <i class="fa-solid fa-heart"></i>
+                                <span style="margin-left: 10px;">BG</span>
+                                <span style="padding-left: 210px;" class="mb-0">B+</span>
+                            </div>
+                            <div style="padding-top: 20px;">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span style="margin-left: 5px;">EDU</span>
+                                <span style="padding-left: 185px;" class="mb-0">MCA</span>
+                            </div>
+                            </li>
+                            <div style="padding-top: 20px;">
+                                <i class="fa-sharp fa-solid fa-location-dot"></i>
+                                <span style="margin-left: 10px;">RES</span>
+                                <span style="padding-left: 170px;" class="mb-0">Bangalore</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact ">
+                        <div class="email bg-bluelight ">
+                            <h4>EMAIL ID</h4>
+                            <p>
+                                <i class="fa-regular fa-envelope "></i>
+                                <span>truongvvde140264@gmail.com</span>
+                            </p>
+                        </div>
+                        <div  class="phone bg-blue ">
+                            <h4>PHONE NO</h4>
+                            <p>
+                                <i class="fa-solid fa-phone "></i>
+                                <span>0868906633</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col l-3">
+                <div class="course-item">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQglpexuW5yIzIpVUo_fIDdawkThg03FXsaxw&usqp=CAU" alt="" class="place-img">
+                    <h1>TOM HANKS</h1>
+                    <P style="text-align:center ;">UI Designer</P>
+                    <div class="card">
+                        <!-- row 1 -->
+                        <div class="card-body">
+                            <div>
+                                <i class="fa-solid fa-calendar-days" style="padding-top:5px ;"></i>
+                                <span style="margin-left: 10px;">DBO</span>
+                                <span style="padding-left: 150px;" class="mb-0">23/05/2014</span>
+                            </div>
+                            <div style="padding-top: 20px;">
+                                <i class="fa-solid fa-heart"></i>
+                                <span style="margin-left: 10px;">BG</span>
+                                <span style="padding-left: 210px;" class="mb-0">B+</span>
+                            </div>
+                            <div style="padding-top: 20px;">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span style="margin-left: 5px;">EDU</span>
+                                <span style="padding-left: 185px;" class="mb-0">MCA</span>
+                            </div>
+                            </li>
+                            <div style="padding-top: 20px;">
+                                <i class="fa-sharp fa-solid fa-location-dot"></i>
+                                <span style="margin-left: 10px;">RES</span>
+                                <span style="padding-left: 170px;" class="mb-0">Bangalore</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact ">
+                        <div class="email bg-orange ">
+                            <h4>EMAIL ID</h4>
+                            <p>
+                                <i class="fa-regular fa-envelope "></i>
+                                <span >truongvvde140264@gmail.com</span>
+                            </p>
+                        </div>
+                        <div class="phone bg-yellow ">
+                            <h4>PHONE NO</h4>
+                            <p>
+                                <i class="fa-solid fa-phone "></i>
+                                <span>0868906633</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col l-3">
+                <div class="course-item">
+
+                    <img src="" alt="" class="place-img">
+                    <h1>SILVESTER STALIN</h1>
+                    <P style="text-align:center ;">Testing</P>
+                    <div class="card">
+                        <!-- row 1 -->
+                        <div class="card-body">
+                            <div>
+                                <i class="fa-solid fa-calendar-days" style="padding-top:5px ;"></i>
+                                <span style="margin-left: 10px;">DBO</span>
+                                <span style="padding-left: 150px;" class="mb-0">23/05/2014</span>
+                            </div>
+                            <div style="padding-top: 20px;">
+                                <i class="fa-solid fa-heart"></i>
+                                <span style="margin-left: 10px;">BG</span>
+                                <span style="padding-left: 210px;" class="mb-0">B+</span>
+                            </div>
+                            <div style="padding-top: 20px;">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span style="margin-left: 5px;">EDU</span>
+                                <span style="padding-left: 185px;" class="mb-0">MCA</span>
+                            </div>
+                            </li>
+                            <div style="padding-top: 20px;">
+                                <i class="fa-sharp fa-solid fa-location-dot"></i>
+                                <span style="margin-left: 10px;">RES</span>
+                                <span style="padding-left: 170px;" class="mb-0">Bangalore</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact ">
+                        <div class="email bg-pinklight ">
+                            <h4>EMAIL ID</h4>
+                            <p>
+                                <i class="fa-regular fa-envelope "></i>
+                                <span>truongvvde140264@gmail.com</span>
+                            </p>
+                        </div>
+                        <div class="phone bg-pink ">
+                            <h4>PHONE NO</h4>
+                            <p>
+                                <i class="fa-solid fa-phone "></i>
+                                <span>0868906633</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+</body>
+
+
+</html>
