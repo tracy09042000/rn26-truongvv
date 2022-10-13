@@ -10,7 +10,7 @@
 
     <form onsubmit="return false" >
         <input type="text" name="" id="input_Fibo">
-        <button type="submit" onclick="fibonancci()">summit</button>
+        <button type="submit" onclick="fibo()">summit</button>
     </form>
 <body>
     <script>
@@ -27,7 +27,24 @@
                 n2 = nextTerm;
 }
         }
-        
+        function fibo() {
+            var n = document.getElementById('input_Fibo').value;
+            var pre = 0;
+            var next = 1;
+            var sum = 0;
+            var arr = '';
+
+            for (let i = 0; i <= n; i++) {
+                if (pre <= n) {
+                    arr += pre + ' ';
+                    sum = pre + next;
+                    pre = next;
+                    next = sum;
+                }
+            }
+            console.log(arr);
+            
+        }
 
     </script>
 </body>
