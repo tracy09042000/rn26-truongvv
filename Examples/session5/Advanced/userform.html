@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            padding: 16px;
+            text-align: left;
+            padding-top: 50px;
+            margin-left: 30%;
+        }
+
+        input[type=email] {
+            width: 55%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+
+        }
+
+        .pw {
+            width: 55%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 10%;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+
+        }
+
+        .topnav a {
+            float: right;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="userform.html">User Form</a>
+        <a href="Userlist.html">User List</a>
+        <a href="home.html">Home</a>
+    </div>
+
+    <div class="container">
+        <form onsubmit="return false" class="form_css">
+            <label for="uname"><b>Email</b></label><br>
+            <input type="email" placeholder="Enter Email" name="uname" id="input_email"><br>
+
+            <label for="psw"><b>Password</b></label><br>
+            <input class="pw" type="password" placeholder="Enter Password" name="psw" id="myInput"><br>
+            <input type="checkbox" onclick="myFunction()">Hide <br>
+        </form>
+        <button type="submit" onclick="handleSummit()">Login</button><br>
+        <button type="button" onclick="handleReset()">Reset</button>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+        function handleSummit() {
+            const EMAIL = 'admin';
+            const PASSWORD = 'admin';
+            let elemente = document.getElementById('input_email').value;
+            let elementpw = document.getElementById('myInput').value;
+            console.log('email:', elemente);
+            console.log('pw:', elementpw);
+            if (EMAIL === elemente && PASSWORD === elementpw) {
+                alert('Successfully');
+
+            } else
+
+                alert('Fail');
+
+        }
+        function handleReset() {
+            let elemente = document.getElementById('input_email');
+            let elementpw = document.getElementById('myInput');
+            elemente.value = '';
+            elementpw.value = '';
+
+        }
+
+        let a = '';
+        for (let i = 0; i < 5; i++) {
+            a += '*';
+            console.log(a);
+
+        }
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div>
-        <form onsubmit="return false" >
+        <form onsubmit="return false">
             <input type="text" name="number" id="mynumber">
             <button type="button" onclick="check()">Check</button>
         </form>
     </div>
     <script>
-        
-     function check() {
-        var x = document.getElementById('mynumber').value;
-        x = parseInt(x);
-        if ( x % 2 == 0) {
-            alert('la so chan')
-            
-        } else {
-            alert('la so le')
-            
+
+        function check() {
+            var x = document.getElementById('mynumber').value;
+            x = parseInt(x);
+            if (x % 2 == 0) {
+                alert('la so chan')
+
+            } else {
+                alert('la so le')
+
+            }
+
         }
-        
-     }
 
 
     </script>
 </body>
+
 </html>

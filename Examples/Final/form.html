@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery/jquery.min.js"></script>
+    <!-- JS VALIDATE -->
+    <script src="./jquery/jquery.validate.min.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .title {
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        .title a {
+            float: right;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .title a:hover {
+
+            color: #088178;
+        }
+
+        .title a.active {
+            color: #088178;
+        }
+
+        .title a.active::after {
+            position: absolute;
+        }
+
+        label {
+            display: inline-block;
+        }
+
+        .form-label {
+            margin-bottom: 15px;
+        }
+
+        .form_css {
+            width: 50%;
+            margin: auto;
+            margin-top: 5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            font-weight: 400;
+            padding: 10px 15px;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            border-radius: .375rem;
+            border: 1px solid #ced4da;
+        }
+
+        .div_css {
+            margin-bottom: 1rem;
+        }
+
+        .form-check-input {
+            width: 1em;
+            height: 1em;
+            margin-top: .25em;
+        }
+
+        .btn_css {
+            height: 40px;
+            width: 70px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <a class="active" href="form.html">User Form</a>
+        <a href="list.html">User List</a>
+        <a href="home.html">Home</a>
+    </div>
+    <form id="myform" onsubmit="return false" class="form_css">
+        <!-- <div class="div_css">
+            <label for="input__email" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="username" id="input__email">
+        </div>
+
+        <div class="div_css">
+            <label for="input__password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="input__password">
+        </div> -->
+
+
+        <!-- ----new----- -->
+        <div class="div_css">
+            <label for="input__id" class="form-label">ID</label>
+            <input type="number" class="form-control" name="id" id="input__id">
+        </div>
+        <div class="div_css">
+            <label for="input__name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" id="input__name">
+        </div>
+        <div class="div_css">
+            <label for="input__age" class="form-label">Age</label>
+            <input type="number" class="form-control" name="age" id="input__age">
+        </div>
+        <div class="div_css">
+            <label for="input__address" class="form-label">Address</label>
+            <input type="text" class="form-control" name="address" id="input__address">
+        </div>
+
+        <!-- <div class="div_css">
+            <input onclick="hidePW()" type="checkbox" class="form-check-input" id="input__checkbox">
+            <label class="label-checkbox" for="input__checkbox">Hidden</label>
+        </div> -->
+
+        <div class="btn">
+            <button id="btn_register" onclick="handleSubmit(this)" class="btn_css">Register</button>
+            <!-- <button onclick="handleReset()" class="btn_css">Reset</button> -->
+        </div>
+
+
+    </form>
+    <script src="./form.js"></script>
+</body>
+<script>
+
+    window.onload = function () {
+        let id = getIdUrl();
+        // getUser();
+        getUser(id);
+
+    };
+
+    function getIdUrl() {
+        let url = new URL(window.location.href);
+        let id = url.searchParams.get("id");
+        return id;
+    }
+
+    function getUser() {
+        let id = getIdUrl();
+        fetch("https://634e9e69f34e1ed8269171ce.mockapi.io/person/" + id, {
+            method: "GET",
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                document.getElementById("input__id").value = data.id;
+                document.getElementById("input__name").value = data.name;
+                document.getElementById("input__age").value = data.age;
+                document.getElementById("input__address").value = data.address;
+                document.getElementById("btn_register").textContent = "Update"
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+        console.log(id);
+    }
+    function putData(user, id) {
+        fetch("https://634e9e69f34e1ed8269171ce.mockapi.io/person/" + id, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+        })
+            .then((response) => response.json())
+            .then((res) => console.log(res))
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    }
+    function handleReset() {
+        let elementInputEmail = document.getElementById('input__email');
+        let elementInputPassword = document.getElementById('input__password');
+        let elementInputCheckBox = document.getElementById('input__checkbox');
+        if (elementInputEmail) {
+            elementInputEmail.value = '';
+            elementInputPassword.value = '';
+        }
+        if (elementInputCheckBox) {
+            elementInputCheckBox.checked = false;
+        }
+    }
+    function handleSubmit(event) {
+        // let elementInputEmail = document.getElementById('input__email');
+        // let elementInputPassword = document.getElementById('input__password');
+        let elementInputId = document.getElementById('input__id');
+        let elementInputName = document.getElementById('input__name');
+        let elementInputAge = document.getElementById('input__age');
+        let elementInputAddress = document.getElementById('input__address');
+        // let elementInputCheckBox = document.getElementById('input__checkbox');
+        let objectUser = {
+            id: elementInputId.value,
+            name: elementInputName?.value,
+            age: elementInputAge.value,
+            address: elementInputAddress.value
+        }
+
+        let id = getIdUrl();
+        if (id) {
+            putData(objectUser, id);
+        } else {
+            postData(objectUser);
+        }
+        // console.log(objectUser);
+        // postData(objectUser)
+        return false;
+    }
+    function postData(user) {
+        fetch("https://634e9e69f34e1ed8269171ce.mockapi.io/person", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+        })
+            .then((response) => response.json())
+            .then((res) => console.log(res))
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    }
+    function hidePW() {
+        var x = document.getElementById("input__password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+
+
+    // -----Validate Form-----
+
+    var settings = {
+        rules: {
+            username: {
+                required: true
+            },
+            password: {
+                required: true,
+                rangelength: [6, 12],
+            }
+        },
+        messages: {
+            username: {
+                required: 'Bạn chưa nhập email',
+                email: 'Dia chi email khong hop le',
+            },
+            password: {
+                required: 'Bạn chưa nhập password ',
+                rangelength: 'Toi thieu phai co 6 hoac 12 ki tu!'
+            },
+
+        },
+    };
+    var validator = $('#myform').validate(settings);
+</script>
+
+</html>

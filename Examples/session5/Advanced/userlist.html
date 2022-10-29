@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .topnav {
+      overflow: hidden;
+
+    }
+
+    .topnav a {
+      float: right;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+
+      color: blue;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .row {
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+
+    .column {
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      padding: 5px;
+      padding-top: 70px;
+
+    }
+
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 16px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="userform.html">User Form</a>
+    <a href="Userlist.html">User List</a>
+    <a href="home.html">Home</a>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Points</th>
+        </tr>
+        <tr>
+          <td>Jill</td>
+          <td>Smith</td>
+          <td>50</td>
+          <td><input style="border-radius: 8px; padding: 8px; background-color: green; color: white; " type="button"
+              value="Deleted">
+            <input style="border-radius: 8px; padding: 8px; background-color: red; color: white; " type="button"
+              value="Detail">
+          </td>
+        </tr>
+        <tr>
+          <td>Eve</td>
+          <td>Jackson</td>
+          <td>94</td>
+          <td><input style="border-radius: 8px; padding: 8px; background-color: green; color: white; " type="button"
+              value="Deleted">
+            <input style="border-radius: 8px; padding: 8px; background-color: red; color: white; " type="button"
+              value="Detail">
+          </td>
+        </tr>
+        <tr>
+          <td>Adam</td>
+          <td>Johnson</td>
+          <td>67</td>
+          <td><input style="border-radius: 8px; padding: 8px; background-color: green; color: white; " type="button"
+              value="Deleted">
+            <input style="border-radius: 8px; padding: 8px; background-color: red; color: white; " type="button"
+              value="Detail">
+          </td>
+
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="../index.js"></script>
+
+</body>
+
+</html>
